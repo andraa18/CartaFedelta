@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoyaltyWeb</title>
+    <style>
+        /* Stili base del corpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenitore centrale */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        /* Stile del titolo */
+        header h1 {
+            color: #ff66a3;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Stile del paragrafo */
+        main p {
+            color: #ff99cc;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        /* Contenitore dei pulsanti */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Stile dei pulsanti */
+        .button {
+            background-color: #ff66a3;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e0558c;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media (max-width: 600px) {
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Intestazione -->
+        <header>
+            <h1 th:text="${appName}">LoyaltyWeb</h1>
+        </header>
+        <!-- Contenuto principale -->
+        <main>
+            <p>Carte Fedeltà Virtuali</p>
+            <div class="buttons">
+                <!-- Pulsanti -->
+                <button class="button" th:onclick="'window.location.href=\'' + @{/aziendaHome} + '\''">Azienda</button>
+                <button class="button" th:onclick="'window.location.href=\'' + @{/clienteHome} + '\''">Cliente</button>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
